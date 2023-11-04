@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using Applicado.Api.Models;
 
-namespace Api.Applicado.Features.JobApplications;
+namespace Applicado.Api.Features.JobApplications;
 
 public record JobApplicationDto
 {

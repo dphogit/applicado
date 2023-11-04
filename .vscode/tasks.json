@@ -25,6 +25,16 @@
             ]
         },
         {
+            "label": "Unit Test API",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "test",
+                "${workspaceFolder}/Applicado.Api.UnitTests/Applicado.Api.UnitTests.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
             "label": "publish",
             "command": "dotnet",
             "type": "process",

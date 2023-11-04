@@ -18,9 +18,17 @@
             }
         },
         {
-            "name": ".NET Core Attach",
+            "name": "API Unit Tests",
             "type": "coreclr",
-            "request": "attach"
+            "request": "launch",
+            "preLaunchTask": "Unit Test API",
+            "program": "${workspaceFolder}/Applicado.Api.UnitTests/bin/Debug/net7.0/Applicado.Api.UnitTests.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Applicado.Api.UnitTests",
+            "stopAtEntry": false,
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            }
         }
     ]
 }

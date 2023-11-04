@@ -1,4 +1,3 @@
-using Api.Applicado.Features.JobApplications;
 using Applicado.Api.Models;
 using Microsoft.AspNetCore.Http.HttpResults;
 

@@ -1,4 +1,4 @@
-using Api.Applicado.Features.JobApplications;
+using Applicado.Api.Features.JobApplications;
 using Applicado.Api.Models;
 
 namespace Applicado.Api;
