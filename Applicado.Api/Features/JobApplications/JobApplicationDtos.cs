@@ -22,6 +22,10 @@ public record JobApplicationDto
     public DateTimeOffset CloseAtDateTime { get; init; }
 
     public string? Notes { get; init; }
+
+    public DateTimeOffset CreatedAtDateTime { get; init; }
+
+    public DateTimeOffset UpdatedAtDateTime { get; init; }
 }
 
 public record CreateJobApplicationDto

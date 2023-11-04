@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Applicado.Api.Models;
 
-public class JobApplication
+public class JobApplication : TimestampedModel
 {
     public Guid Id { get; set; }
 
