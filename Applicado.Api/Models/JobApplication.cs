@@ -13,11 +13,11 @@ public class JobApplication
     public required string Role { get; set; }
 
     [Required]
-    public required string Status { get; set; }
+    public required Status Status { get; set; }
 
     public string? Link { get; set; }
 
-    public DateTime? CloseAt { get; set; }
+    public DateTimeOffset CloseAt { get; set; }
 
     public string? Notes { get; set; }
 }

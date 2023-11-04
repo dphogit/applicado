@@ -1,7 +1,16 @@
+using System.Text.Json.Serialization;
 using Applicado.Api.Data;
+using Applicado.Api.Features.JobApplications;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.ConfigureHttpJsonOptions(options =>
+{
+    options.SerializerOptions.Converters.Add(new JsonStringEnumConverter());
+});
+
+builder.Services.AddScoped<IJobApplicationsService, JobApplicationService>();
 
 builder.Services.AddDbContext<DataContext>(options => options.UseInMemoryDatabase("Applicado"));
 
@@ -11,11 +20,12 @@ if (builder.Environment.IsDevelopment())
 }
 
 var app = builder.Build();
+app.UsePathBase("/api/v1");
 
-app.MapGet("/", () => "Hello World!");
+app.MapGet("/", () => "Hello From Applicado!");
 
-var jobAppsRoutes = app.MapGroup("/job-applications");
-
-jobAppsRoutes.MapGet("/", async (DataContext context) => await context.JobApplications.ToArrayAsync());
+app.MapGroup("/job-applications")
+    .MapJobApplicationEndpoints()
+    .WithTags("Job Applications");
 
 app.Run();
