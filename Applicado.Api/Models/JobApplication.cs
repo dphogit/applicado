@@ -17,7 +17,7 @@ public class JobApplication
 
     public string? Link { get; set; }
 
-    public DateTimeOffset CloseAt { get; set; }
+    public DateTimeOffset CloseAtDateTime { get; set; }
 
     public string? Notes { get; set; }
 }

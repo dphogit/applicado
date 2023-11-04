@@ -14,7 +14,7 @@ public static class Extensions
             Role = jobApplication.Role,
             Status = jobApplication.Status,
             Link = jobApplication.Link,
-            CloseAt = jobApplication.CloseAt,
+            CloseAtDateTime = jobApplication.CloseAtDateTime,
             Notes = jobApplication.Notes
         };
     }

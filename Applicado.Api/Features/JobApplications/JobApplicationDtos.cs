@@ -1,5 +1,4 @@
 using System.ComponentModel.DataAnnotations;
-using System.Text.Json.Serialization;
 using Applicado.Api.Models;
 
 namespace Api.Applicado.Features.JobApplications;
@@ -20,7 +19,7 @@ public record JobApplicationDto
 
     public string? Link { get; init; }
 
-    public DateTimeOffset CloseAt { get; init; }
+    public DateTimeOffset CloseAtDateTime { get; init; }
 
     public string? Notes { get; init; }
 }
@@ -38,7 +37,7 @@ public record CreateJobApplicationDto
 
     public string? Link { get; init; }
 
-    public DateTimeOffset CloseAt { get; init; }
+    public DateTimeOffset CloseAtDateTime { get; init; }
 
     public string? Notes { get; init; }
 }
@@ -56,7 +55,7 @@ public record UpdateJobApplicationDto
 
     public string? Link { get; init; }
 
-    public DateTimeOffset CloseAt { get; init; }
+    public DateTimeOffset CloseAtDateTime { get; init; }
 
     public string? Notes { get; init; }
 }

@@ -43,7 +43,7 @@ public static class JobApplicationEndpoints
             Role = jobAppDto.Role,
             Status = jobAppDto.Status,
             Link = jobAppDto.Link,
-            CloseAt = jobAppDto.CloseAt,
+            CloseAtDateTime = jobAppDto.CloseAtDateTime,
             Notes = jobAppDto.Notes
         };
 
@@ -70,7 +70,7 @@ public static class JobApplicationEndpoints
         existingJobApp.Role = jobAppDto.Role;
         existingJobApp.Status = jobAppDto.Status;
         existingJobApp.Link = jobAppDto.Link;
-        existingJobApp.CloseAt = jobAppDto.CloseAt;
+        existingJobApp.CloseAtDateTime = jobAppDto.CloseAtDateTime;
         existingJobApp.Notes = jobAppDto.Notes;
 
         await service.UpdateAsync(existingJobApp);
