@@ -8,7 +8,7 @@ public static class JobApplicationEndpoints
     public static RouteGroupBuilder MapJobApplicationEndpoints(this RouteGroupBuilder jobAppsRouteGroup)
     {
         jobAppsRouteGroup.MapGet("/", JobApplicationEndpoints.GetAll);
-        jobAppsRouteGroup.MapGet("/{id}", JobApplicationEndpoints.Get).WithName("GetById");
+        jobAppsRouteGroup.MapGet("/{id}", JobApplicationEndpoints.Get).WithName("GetJobApplicationById");
         jobAppsRouteGroup.MapPost("/", JobApplicationEndpoints.Create);
         jobAppsRouteGroup.MapPut("/{id}", JobApplicationEndpoints.Update);
         jobAppsRouteGroup.MapDelete("/{id}", JobApplicationEndpoints.Delete);
@@ -49,7 +49,7 @@ public static class JobApplicationEndpoints
         await service.CreateAsync(newJobApp);
 
         return TypedResults.CreatedAtRoute(
-            routeName: "GetById",
+            routeName: "GetJobApplicationById",
             routeValues: new { id = newJobApp.Id.ToString() },
             value: newJobApp.AsDto()
         );
@@ -77,12 +77,12 @@ public static class JobApplicationEndpoints
     }
 
 
-    public static async Task<NoContent> Delete(IJobApplicationsService service, Guid id)
+    public static async Task<Results<NoContent, NotFound>> Delete(IJobApplicationsService service, Guid id)
     {
         var jobApp = await service.GetAsync(id);
 
         if (jobApp is null)
-            return TypedResults.NoContent();
+            return TypedResults.NotFound();
 
         await service.DeleteAsync(jobApp);
         return TypedResults.NoContent();
