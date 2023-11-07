@@ -7,11 +7,21 @@ public static class JobApplicationEndpoints
 {
     public static RouteGroupBuilder MapJobApplicationEndpoints(this RouteGroupBuilder jobAppsRouteGroup)
     {
-        jobAppsRouteGroup.MapGet("/", JobApplicationEndpoints.GetAll);
-        jobAppsRouteGroup.MapGet("/{id}", JobApplicationEndpoints.Get).WithName("GetJobApplicationById");
-        jobAppsRouteGroup.MapPost("/", JobApplicationEndpoints.Create);
-        jobAppsRouteGroup.MapPut("/{id}", JobApplicationEndpoints.Update);
-        jobAppsRouteGroup.MapDelete("/{id}", JobApplicationEndpoints.Delete);
+        jobAppsRouteGroup.MapGet("/", JobApplicationEndpoints.GetAll)
+            .WithName("GetAllJobApplications");
+
+        jobAppsRouteGroup.MapGet("/{id}", JobApplicationEndpoints.Get)
+            .WithName("GetJobApplicationById");
+
+        jobAppsRouteGroup.MapPost("/", JobApplicationEndpoints.Create)
+            .WithName("CreateJobApplication");
+
+        jobAppsRouteGroup.MapPut("/{id}", JobApplicationEndpoints.Update)
+            .WithName("UpdateJobApplication");
+
+        jobAppsRouteGroup.MapDelete("/{id}", JobApplicationEndpoints.Delete)
+            .WithName("DeleteJobApplication");
+
         return jobAppsRouteGroup;
     }
 
