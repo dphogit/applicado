@@ -17,7 +17,7 @@ public class JobApplication : TimestampedModel
 
     public string? Link { get; set; }
 
-    public DateTimeOffset CloseAtDateTime { get; set; }
+    public DateTimeOffset? CloseAtDateTime { get; set; }
 
     public string? Notes { get; set; }
 }

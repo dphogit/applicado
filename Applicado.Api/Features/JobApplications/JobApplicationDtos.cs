@@ -19,7 +19,7 @@ public record JobApplicationDto
 
     public string? Link { get; init; }
 
-    public DateTimeOffset CloseAtDateTime { get; init; }
+    public DateTimeOffset? CloseAtDateTime { get; init; }
 
     public string? Notes { get; init; }
 
@@ -41,7 +41,7 @@ public record CreateJobApplicationDto
 
     public string? Link { get; init; }
 
-    public DateTimeOffset CloseAtDateTime { get; init; }
+    public DateTimeOffset? CloseAtDateTime { get; init; }
 
     public string? Notes { get; init; }
 }
@@ -59,7 +59,7 @@ public record UpdateJobApplicationDto
 
     public string? Link { get; init; }
 
-    public DateTimeOffset CloseAtDateTime { get; init; }
+    public DateTimeOffset? CloseAtDateTime { get; init; }
 
     public string? Notes { get; init; }
 }

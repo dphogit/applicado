@@ -1,7 +1,9 @@
 using System.Text.Json.Serialization;
 using Applicado.Api.Data;
 using Applicado.Api.Features.JobApplications;
+using Applicado.Api.Models;
 using Microsoft.EntityFrameworkCore;
+using Npgsql;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +14,19 @@ builder.Services.ConfigureHttpJsonOptions(options =>
 
 builder.Services.AddScoped<IJobApplicationsService, JobApplicationService>();
 
-builder.Services.AddDbContext<DataContext>(options => options.UseInMemoryDatabase("Applicado"));
+builder.Services.AddDbContext<DataContext>(options =>
+{
+    var connectionString = builder.Configuration["Postgres:ConnectionString"];
+
+    var dataSourceBuilder = new NpgsqlDataSourceBuilder(connectionString);
+    dataSourceBuilder.MapEnum<Status>("status");
+
+    var dataSource = dataSourceBuilder.Build();
+
+    options
+        .UseNpgsql(dataSource)
+        .UseSnakeCaseNamingConvention();
+});
 
 if (builder.Environment.IsDevelopment())
 {

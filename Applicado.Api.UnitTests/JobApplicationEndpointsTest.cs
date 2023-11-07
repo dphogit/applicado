@@ -2,7 +2,6 @@ using Applicado.Api.Features.JobApplications;
 using Applicado.Api.Models;
 using FluentAssertions;
 using FluentAssertions.Extensions;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Moq;
 

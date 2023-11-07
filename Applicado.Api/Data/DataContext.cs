@@ -39,4 +39,8 @@ public class DataContext : DbContext
             }
         }
     }
+
+    // Maps the Status enum to Postgres enum type. physically stored as an integer but handled like string in (db) app.
+    protected override void OnModelCreating(ModelBuilder builder)
+        => builder.HasPostgresEnum<Status>();
 }
