@@ -24,6 +24,8 @@ dotnet user-secrets set "Postgres:ConnectionString" "Host=localhost;Database=<PO
 For more about storage of app secrets in development and how to use
 `dotnet user-secrets`, see the [Microsoft Documentation](https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets).
 
+OpenAPI specification is displayed in the Swagger UI at the `/swagger` endpoint.
+
 ## Database Setup
 
 This project uses PostgreSQL and PgAdmin4 is setup with docker compose. In the

@@ -56,3 +56,5 @@ app.MapGroup("/job-applications")
     .WithTags("Job Applications");
 
 app.Run();
+
+public partial class Program { }

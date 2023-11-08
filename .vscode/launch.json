@@ -29,6 +29,19 @@
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development"
             }
+        },
+        {
+            "name": "API Integration Tests",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "Integration Test API",
+            "program": "${workspaceFolder}/Applicado.Api.IntegrationTests/bin/Debug/net7.0/Applicado.Api.IntegrationTests.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Applicado.Api.IntegrationTests",
+            "stopAtEntry": false,
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            }
         }
     ]
 }

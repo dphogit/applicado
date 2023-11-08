@@ -35,6 +35,15 @@
             "problemMatcher": "$msCompile"
         },
         {
+            "label": "Integration Test API",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "test",
+                "${workspaceFolder}/Applicado.Api.IntegrationTests/Applicado.Api.IntegrationTests.csproj"
+            ]
+        },
+        {
             "label": "publish",
             "command": "dotnet",
             "type": "process",
