@@ -12,8 +12,7 @@ public class JobApplication : TimestampedModel
     [Required]
     public required string Role { get; set; }
 
-    [Required]
-    public required Status Status { get; set; }
+    public Status? Status { get; set; }
 
     public string? Link { get; set; }
 

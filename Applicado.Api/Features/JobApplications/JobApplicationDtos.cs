@@ -14,8 +14,7 @@ public record JobApplicationDto
     [Required]
     public required string Role { get; init; }
 
-    [Required]
-    public Status Status { get; init; }
+    public Status? Status { get; init; }
 
     public string? Link { get; init; }
 
@@ -36,8 +35,7 @@ public record CreateJobApplicationDto
     [Required]
     public required string Role { get; init; }
 
-    [Required]
-    public Status Status { get; init; }
+    public Status? Status { get; init; }
 
     public string? Link { get; init; }
 
@@ -54,8 +52,7 @@ public record UpdateJobApplicationDto
     [Required]
     public required string Role { get; init; }
 
-    [Required]
-    public Status Status { get; init; }
+    public Status? Status { get; init; }
 
     public string? Link { get; init; }
 
