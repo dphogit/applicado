@@ -8,7 +8,7 @@ public interface IJobApplicationsService
 
     Task DeleteAsync(JobApplication jobApplication);
 
-    Task<List<JobApplication>> GetAllAsync();
+    Task<IEnumerable<JobApplication>> GetAllAsync();
 
     Task<JobApplication?> GetAsync(Guid id);
 

@@ -1,7 +1,5 @@
-using System.Net;
 using Applicado.Api.IntegrationTests.Helpers;
 using FluentAssertions;
-using FluentAssertions.Web;
 
 namespace Applicado.Api.IntegrationTests;
 

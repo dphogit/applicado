@@ -30,7 +30,7 @@ class JobApplicationService : IJobApplicationsService
         return await dataContext.JobApplications.FindAsync(id);
     }
 
-    public async Task<List<JobApplication>> GetAllAsync()
+    public async Task<IEnumerable<JobApplication>> GetAllAsync()
     {
         return await dataContext.JobApplications.ToListAsync();
     }
